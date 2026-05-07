@@ -31,7 +31,7 @@ API_QUERY     = ""  # possible API key that will be added at the end of the URL;
 
 # Input/Output Paths
 BOUNDARY_PATH = "boundaries.gpkg" # gpkg file with the desired boundaries for extraction
-COOKIE_FILE   = "cookies.txt"  # cookie file in Netscape format, containing e.g. session-sepcific authentification credentials. Set to None if not using cookies
+COOKIE_FILE   = "cookies.txt"  # cookie file in Netscape format, containing e.g. session-sepcific authentification credentials (file can be exported from webbrowsers). Set to None if not using cookies
 OUTPUT_TIFF   = "output.tif" # output raster
 TEMP_DIR      = "temp_tiles" # folder for temporary saving extracted image tiles
 
