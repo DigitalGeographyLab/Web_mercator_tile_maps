@@ -25,12 +25,12 @@ from rasterio.crs import CRS
 # ==========================================
 #
 # URL Settings
-BASE_URL_TEMPLATE = "{BASE_URL}/{zoom_level}/{tile_x}/{tile_y}" #replace {BASE_URL} with the base URL of the desired map provider
+BASE_URL_TEMPLATE = "{BASE_URL}/{z}/{x}/{y}.{extension}" #replace {BASE_URL} with the base URL of the desired map provider. {z} denotes the zoom level, {x} and {y} denote the x and y position of the specific tile. {extension} denotes the file extension of the URL (see below).
 FILE_EXTENSION    = "png"  # the image format of the desired map as given in the end of the provider's URL, e.g., png, jpg, webp
-API_QUERY     = ""  # possible API key at the end of the URL; leave as "" if no API key is required
+API_QUERY     = ""  # possible API key that will be added at the end of the URL; leave as "" if no API key is required
 
 # Input/Output Paths
-BOUNDARY_PATH = "" # gpkg file with the desired boundaries for extraction
+BOUNDARY_PATH = "boundaries.gpkg" # gpkg file with the desired boundaries for extraction
 COOKIE_FILE   = "cookies.txt"  # cookie file in Netscape format, containing e.g. session-sepcific authentification credentials. Set to None if not using cookies
 OUTPUT_TIFF   = "output.tif" # output raster
 TEMP_DIR      = "temp_tiles" # folder for temporary saving extracted image tiles
@@ -134,7 +134,7 @@ def main():
 
     for i, (tx, ty) in enumerate(tile_coords):
         # Format the URL using the template and config variables
-        url = f"{BASE_URL_TEMPLATE.format(zoom_level=ZOOM_LEVEL, tile_x=tx, tile_y=ty)}.{FILE_EXTENSION}?{API_QUERY}"
+        url = f"{BASE_URL_TEMPLATE.format(zoom_level=ZOOM_LEVEL, tile_x=tx, tile_y=ty, extension=FILE_EXTENSION)}?{API_QUERY}"
         
         try:
             resp = session.get(url)
