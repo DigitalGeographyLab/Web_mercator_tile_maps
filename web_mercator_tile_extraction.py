@@ -3,8 +3,8 @@
 # ==========================================
 # 
 # This script allows extracting, georeferencing and merging tile-based Web Mercator image maps based on user-defined boundaries.
-# It is possible to address entirely open web servers, or providers requring authentifiaction through logins or API keys.
-# Data access and extraction should always happen in accordance with the provider's Terms of Use as wll as local laws and regulations.
+# It is possible to address entirely open web servers, or providers requiring authentiaction through logins (using authentication cookies) or API keys.
+# Data access and extraction should always happen in accordance with the provider's Terms of Use as well as local laws and regulations.
 #
 # ==========================================
 
@@ -31,7 +31,7 @@ API_QUERY     = ""  # possible API key that will be added at the end of the URL;
 
 # Input/Output Paths
 BOUNDARY_PATH = "boundaries.gpkg" # gpkg file with the desired boundaries for extraction
-COOKIE_FILE   = "cookies.txt"  # cookie file in Netscape format, containing e.g. session-sepcific authentification credentials (file can be exported from webbrowsers). Set to None if not using cookies
+COOKIE_FILE   = "cookies.txt"  # cookie file in Netscape format, containing e.g. session-sepcific authentication credentials (file can be exported from webbrowsers). Set to None if not using cookies for authentication.
 OUTPUT_TIFF   = "output.tif" # output raster
 TEMP_DIR      = "temp_tiles" # folder for temporary saving extracted image tiles
 
