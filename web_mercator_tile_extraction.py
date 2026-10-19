@@ -7,6 +7,13 @@
 # Data access and extraction should always happen in accordance with the provider's Terms of Use as well as local laws and regulations.
 #
 # ==========================================
+#                CITATION
+# ==========================================
+#
+# When using this script, please cite the following work:
+# Klein, R., Willberg, E., Korpilo, S., & Toivonen, T. (2026). A global framework to estimate urban spatial cycling patterns based on crowdsourced data. Journal of Transport Geography, 137, 104822. https://doi.org/10.1016/j.jtrangeo.2026.104822
+#
+# ==========================================
 
 import os
 import math
